@@ -8,8 +8,6 @@
 
 namespace BasicMVC;
 
-use BasicMVC\Request as Request;
-
 class Router
 {
     public static function route(Request $request)

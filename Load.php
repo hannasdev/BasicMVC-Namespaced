@@ -29,8 +29,7 @@ class Load
 
     public function model($name)
     {
-        $name = ucfirst($name);
-        $model = $name . 'Model';
+        $model = ucfirst($name) . 'Model';
         $modelPath = SITE_PATH . 'Models/' . $model . '.php';
         $modelName = '\BasicMVC\Models\\' . $model;
 
