@@ -32,12 +32,13 @@ class Load
         $name = ucfirst($name);
         $model = $name . 'Model';
         $modelPath = SITE_PATH . 'Models/' . $model . '.php';
+        $modelName = '\BasicMVC\Models\\' . $model;
 
         if ( is_readable($modelPath) ) {
             require_once($modelPath);
-            if (class_exists($model)) {
+            if (class_exists($modelName)) {
                 $registry = Registry::getInstance();
-                $registry->$name = new $model;
+                $registry->$name = new $modelName;
                 return true;
             }
         }

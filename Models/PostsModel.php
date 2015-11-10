@@ -5,10 +5,18 @@
 
 namespace BasicMVC\Models;
 
-use BasicMVC\Models\BaseModel as BaseModel;
-
 class PostsModel extends BaseModel
 {
+    public function __construct()
+    {
+        parent::__construct();    
+    }
+
+    public function index()
+    {
+        return true;
+    }
+
     public function getEntries()
     {
         $return = [];

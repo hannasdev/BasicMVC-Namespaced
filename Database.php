@@ -36,7 +36,7 @@ class Database {
 
     private function __construct() {
 
-        $database = 'studioKpi';
+        $database = 'database';
         $host     = 'localhost';
         $port     = '8888';
         $username = 'root';

@@ -27,17 +27,17 @@ class Router
         {
             require_once($controllerFile);
 
-            $controllerName = 'BasicMVC\Controllers\\' . $controller;
-            $controller = new $controllerName;
-            $method     = ( is_callable([$controller, $method]) ) ? $method: 'index';
+            $controllerName = '\BasicMVC\Controllers\\' . $controller;
+            $controllerInst = new $controllerName;
+            $method     = ( is_callable([$controllerInst, $method]) ) ? $method: 'index';
 
             if ( !empty($args) ) {
-                call_user_func_array([$controller, $method], $args);
+                call_user_func_array([$controllerInst, $method], $args);
             } else {
-                call_user_func([$controller, $method]);
+                call_user_func([$controllerInst, $method]);
             }
             return;
         }
-        throw new \Exception('404 -  ' . $controller . ' not found');
+        throw new \Exception('404 -  ' . $controllerName . ' not found');
     }
 }
