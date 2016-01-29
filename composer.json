@@ -1,8 +1,9 @@
 {
+    "name": "gothbarbie/BasicMVC-Namespaced",
+    "description": "A basic PHP-based MVC",
     "autoload": {
         "psr-4": {
             "BasicMVC\\": "application/BasicMVC"
         }
-    },
-    "require": {}
+    }
 }
